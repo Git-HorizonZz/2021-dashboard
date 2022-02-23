@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>FRC Dashboard</title>
+    <title>FRC Dashboard 2021 (2022-test)</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/extras-ui.css">
@@ -27,17 +27,6 @@
                 <line x1="0" y1="20" x2="40" y2="20" stroke="red" />
                 <line x1="20" y1="0" x2="20" y2="40" stroke="red" />
             </svg>
-            <button class="camera-refresh" id="camera1-refresh">Refresh camera</button>
-            <div class="camera-options">
-                <label for="camera1-options-select">Camera stream: </label>
-                <div class="select-container" id="camera1-select-container">
-                    <select id="camera1-options-select">
-                        <option>INTAKE CAMERA</option>
-                        <option>SHOOTER CAMERA</option>
-                        <option>LIMELIGHT</option>
-                    </select>
-                </div>
-            </div>
             <svg id="balls-indicator-left" width="5" height="37.5vw">
                 <rect class="balls-background" x="0" y="0" width="5" height="37.5vw" />
                 <rect class="balls-bar" x="0" y="37.5vw" width="5"/>
@@ -52,17 +41,6 @@
                 <line x1="0" y1="20" x2="40" y2="20" stroke="red" />
                 <line x1="20" y1="0" x2="20" y2="40" stroke="red" />
             </svg>
-            <button class="camera-refresh" id="camera2-refresh">Refresh camera</button>
-            <div class="camera-options">
-                <label for="camera2-options-select">Camera stream: </label>
-                <div class="select-container" id="camera2-select-container">
-                    <select id="camera2-options-select">
-                        <option>INTAKE CAMERA</option>
-                        <option>SHOOTER CAMERA</option>
-                        <option>LIMELIGHT</option>
-                    </select>
-                </div>
-            </div>
             <svg id="balls-indicator-right" width="5" height="37.5vw">
                 <rect class="balls-background" x="0" y="0" width="5" height="37.5vw"/>
                 <rect class="balls-bar" x="0" y="37.5vw" width="5"/>
@@ -134,11 +112,14 @@
             14.3271242,14.3639878 14.9348958,15.089434 C15.451486,15.7055336 18.2535869,14.2027016
             18.2535869,15.089434 L18.2535869,15.089434 Z"></path>
         </svg>
-        <p id="compressor-status">Compressor: ON</p>
+        <!-- <p id="compressor-status">Compressor: ON</p> -->
         <div id="vision-angle"></div>
-        <img id="controlPanelImg" src="../images/ControlPanel.png">
-        <div id="launcher-rpm">0 RPM</div>
+        <!-- <img id="controlPanelImg" src="../images/ControlPanel.png"> -->
     </article>
+    <p id="compressor-status">Compressor: ON</p>
+    <p id="piston-status">Intake: RETRACTED</p>
+    <p id="label-launcher">Launcher:</p>
+    <div id="launcher-rpm">0 RPM</div>
     <!-- Gyroscope -->
     <svg id="gyro" width="150" height="150">
         <circle cx="70" cy="70" r="60" />
@@ -167,8 +148,40 @@
         <line class="target-check" x1="100" y1="265" x2="130" y2="295"></line>
         <line class="target-check" x1="125" y1="295" x2="170" y2="225"></line>
     </svg>
-    <div id="message-text"></div>
-    <button id="message-button">Click for random message</button>
+    <!-- <div id="message-text"></div> -->
+    <!-- <button id="message-button">Click for random message</button> -->
+    <svg id="slow-mode-icon2" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+        <path d="M 243.055 98.908 L 416.744 399.57 L 69.365 399.57 L 243.055 98.908 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 138, 36);" bx:shape="triangle 69.365 98.908 347.379 300.662 0.5 0 1@5111cb95"/>
+        <path d="M 243.167 123.052 L 391.635 388.606 L 94.699 388.606 L 243.167 123.052 Z" style="stroke: rgb(0, 0, 0); fill: rgb(244, 0, 0);" bx:shape="triangle 94.699 123.052 296.936 265.554 0.5 0 1@fbcf2811"/>
+    </svg>
+    <svg id="slow-mode-icon" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+        <path d="M 243.055 98.908 L 416.744 399.57 L 69.365 399.57 L 243.055 98.908 Z" style="stroke: rgb(0, 0, 0); fill: rgb(145, 145, 145);" bx:shape="triangle 69.365 98.908 347.379 300.662 0.5 0 1@5111cb95"/>
+        <path d="M 243.167 123.052 L 391.635 388.606 L 94.699 388.606 L 243.167 123.052 Z" style="stroke: rgb(0, 0, 0); fill: rgb(88, 88, 88);" bx:shape="triangle 94.699 123.052 296.936 265.554 0.5 0 1@fbcf2811"/>
+    </svg>
+    <p id="slow-mode-label">SLOW</p>
+    <p id="slow-mode-label2">MODE</p>
+    <button class="camera-refresh2" id="camera2-refresh">Refresh camera</button>
+    <div class="camera-options2">
+        <label for="camera2-options-select">Camera stream: </label>
+        <div class="select-container" id="camera2-select-container">
+            <select id="camera2-options-select">
+                <option>INTAKE CAMERA</option>
+                <option>SHOOTER CAMERA</option>
+                <option>LIMELIGHT</option>
+            </select>
+        </div>
+    </div>
+    <button class="camera-refresh1" id="camera1-refresh">Refresh camera</button>
+    <div class="camera-options1">
+        <label for="camera1-options-select">Camera stream: </label>
+        <div class="select-container" id="camera1-select-container">
+            <select id="camera1-options-select">
+                <option>INTAKE CAMERA</option>
+                <option>SHOOTER CAMERA</option>
+                <option>LIMELIGHT</option>
+            </select>
+        </div>
+    </div>
 </body>
 
 </html>

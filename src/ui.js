@@ -48,6 +48,8 @@ const pitchAngleText = document.getElementById('target-pitch-angle');
 const camera1OptionSelect = document.getElementById("camera1-options-select");
 const camera2OptionSelect = document.getElementById("camera2-options-select");
 const compressorStatus = document.getElementById('compressor-status');
+const pistonStatus = document.getElementById('piston-status');
+const slowMode = document.getElementById('slow-mode-icon');
 
 cameras[cameraStream1].setParent(document.getElementById('camera1'));
 cameras[cameraStream2].setParent(document.getElementById('camera2'));
@@ -310,6 +312,20 @@ NetworkTables.addKeyListener('/robot/compressor_status', (_, value, __) => {
         compressorStatus.classList.add('off');
         compressorStatus.textContent = 'Compressor: OFF';
     }
+});
+
+NetworkTables.addKeyListener('/robot/piston_status', (_, value, __) => {
+    if (value) {
+        pistonStatus.classList.remove('ext');
+        pistonStatus.textContent = 'Intake: RETRACTED';
+    } else {
+        pistonStatus.classList.add('ext');
+        pistonStatus.textContent = 'Intake: EXTENDED';
+    }
+});
+
+NetworkTables.addKeyListener('/robot/slow_mode', (_, value, __) => {
+    slowMode.classList.toggle('on', value);
 });
 
 function displayClass(classname, visible) {

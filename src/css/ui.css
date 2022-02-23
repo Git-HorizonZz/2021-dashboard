@@ -13,15 +13,30 @@ body > * {
     width: 2.5vw;
 }
 
-.camera-refresh {
+.camera-refresh1 {
     height: 29px;
     position: absolute;
     top: 30px;
+    left: 22%;
 }
 
-.camera-options {
+.camera-refresh2 {
+    height: 29px;
     position: absolute;
-    top: 40vw;
+    top: 30px;
+    right: 22%;
+}
+
+.camera-options1 {
+    position: absolute;
+    top: 38vw;
+    left: 25%;
+}
+
+.camera-options2 {
+    position: absolute;
+    top: 38vw;
+    right: 25%
 }
 
 /* Timer */
@@ -37,19 +52,19 @@ body > * {
     line-height: .8;
 }
 
-#controlPanelImg {
-    align-content: center;
-    position: absolute;
-    bottom: 130px;
-    height: 100px;
-    width: 100px;
-}
-
 #launcher-rpm {
     font-size: 10vh;
     position: absolute;
-    bottom: 50px;
+    bottom: 0px;
+    left: 160px;
 }
+
+/* #img-size{
+    height: 250;
+    width: 250;
+    bottom: 5px;
+    left: 50%;
+} */
 
 #target-svg {
     bottom: 0px;
@@ -157,6 +172,7 @@ body > * {
     height: 100%;
     padding: 0px;
 }
+
 .gutter-horizontal {
     background-color: rgba(255, 255, 255, 0.7);
     cursor: ew-resize;
@@ -292,8 +308,7 @@ text {
 #robot-tower {
     transition: 0.2s;
 }
-#robot-manipulator {
-}
+
 #hatch-manipulation-diagram {
     top: 0;
     left: 0;
@@ -353,32 +368,65 @@ body.enabled > svg {
 
 #compressor-status {
     color: rgb(0, 235, 0);
-    margin-top: 10px;
-    font-size: 20px;
+    top: 76%;
+    left: 5px;
+    font-size: 30px;
 }
 
 #compressor-status.off {
-    color: rgb(230, 0, 0);
+    color: rgb(255, 0, 0);
+}
+
+#piston-status {
+    color: rgb(255, 0, 0);
+    top: 82%;
+    left: 5px;
+    font-size: 30px;
+}
+
+#piston-status.ext {
+    color: rgb(0, 235, 0);
+}
+
+#slow-mode-label {
+    color: rgba(255, 255, 255);
+    left: 47.2%;
+    bottom: 7%;
+    font-size: 30px;
+}
+
+#slow-mode-label2 {
+    color: rgba(255, 255, 255);
+    left: 47.2%;
+    bottom: 3%;
+    font-size: 30px;
+}
+
+#slow-mode-icon {
+    bottom: -6%;
+    left: 42.7%;
+    width: 15%;
+    opacity: 1;
+}
+
+#slow-mode-icon.on {
+    opacity: 0;
+}
+
+#slow-mode-icon2 {
+    bottom: -6%;
+    left: 42.7%;
+    width: 15%;
+}
+
+#label-launcher {
+    top: 88%;
+    left: 5px;
+    font-size: 30px;
 }
 
 .back-camera {
     opacity: 50%;
-}
-
-.spinningRot {
-    animation: spin-color-panel-Rot 0.5s linear infinite forwards;
-}
-
-.spinningPos {
-    animation: spin-color-panel-Pos 1s infinite forwards;
-}
-
-.expandPanel {
-    animation: expand-color-panel 1s linear normal;
-}
-
-.shrinkPanel {
-    animation: expand-color-panel 1s linear reverse;
 }
 
 @keyframes expand-color-panel {
@@ -410,4 +458,5 @@ body.enabled > svg {
     to {
         scale: 100%;
     }
+
 }
