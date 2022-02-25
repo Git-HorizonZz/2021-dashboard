@@ -59,12 +59,12 @@ body > * {
     left: 160px;
 }
 
-/* #img-size{
+#img-size{
     height: 250;
     width: 250;
     bottom: 5px;
     left: 50%;
-} */
+}
 
 #target-svg {
     bottom: 0px;
